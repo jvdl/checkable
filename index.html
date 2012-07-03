@@ -2,7 +2,7 @@
 <html xml:lang="en-au" lang="en-au">
 <head>
 	<meta charset="utf-8">
-	<title>Title</title>
+	<title>Afterlight Checkable Demo</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="revisit-after" content="7 days">
@@ -16,7 +16,7 @@
 		padding:50px;
 	}
 
-	.afterlight-field {
+	.checkable-field {
 		background: #ccc;
 		position: relative;
 		width:20px;
@@ -47,8 +47,8 @@
 
 				// wrap the checkboxes with labels, this way the browser will take care of all those pesky things like
 				// checking the fields
-				$("input[type=radio]", context ).wrap("<label class='afterlight-field afterlight-radio'/>");
-				$("input[type=checkbox]", context ).wrap("<label class='afterlight-field afterlight-checkbox'/>");
+				$("input[type=radio]", context ).wrap("<label class='checkable-field checkable-radio'/>");
+				$("input[type=checkbox]", context ).wrap("<label class='checkable-field checkable-checkbox'/>");
 
 				$(context).on("change", "input[type=radio], input[type=checkbox]", function() {
 					var $this = $(this),
@@ -58,15 +58,15 @@
 					//checkboxes can simply toggle
 					if (!isRadio) {
 						$this
-							.closest(".afterlight-field")
+							.closest(".checkable-field")
 							.toggleClass("checked", isChecked);
 					}
 					else {
 						if (isChecked) {
 							//remove the checked class from all the radios in the group
-							$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".afterlight-field").removeClass("checked");
+							$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".checkable-field").removeClass("checked");
 
-							$this.closest(".afterlight-field").addClass("checked");
+							$this.closest(".checkable-field").addClass("checked");
 						}
 					}
 
