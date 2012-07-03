@@ -1,0 +1,79 @@
+/*
+ * A jQuery plugin for wrapping Checkboxes and Radio buttons
+ *
+ * Author: John Van Der Loo
+ * Twitter: @geekyjohn
+ * Website: http://www.afterlight.com.au
+ *
+ */
+
+(function($, window, undefined) {
+	"use strict";
+
+	$.checkable = function(el, options){
+		// To avoid scope issues, use 'self' instead of 'this'
+		// to reference this class from internal events and functions.
+		var self = this;
+
+		// Access to jQuery and DOM versions of element
+		self.$el = $(el);
+		self.el = el;
+
+		self.init = function(){
+
+			self.options = $.extend({}, $.checkable.defaultOptions, options);
+
+			// Put your initialization code here
+
+			self.setupFields();
+		};
+
+
+		self.setupFields = function( ) {
+
+			var context = self.el;
+
+			// wrap the checkboxes with labels, this way the browser will take care of all those pesky things like
+			// checking the fields
+			$("input[type=radio]", context ).wrap("<label class='checkable-field checkable-radio'/>");
+			$("input[type=checkbox]", context ).wrap("<label class='checkable-field checkable-checkbox'/>");
+
+			$(context).on("change", "input[type=radio], input[type=checkbox]", function() {
+				var $this = $(this),
+					isRadio = $this.is("[type=radio]"),
+					isChecked = $this.is(":checked");
+
+				//checkboxes can simply toggle
+				if (!isRadio) {
+					$this
+						.closest(".checkable-field")
+						.toggleClass("checked", isChecked);
+				}
+				//and radio buttons can only have 1 checked per group
+				else {
+					if (isChecked) {
+						//remove the checked class from all the radios in the group
+						$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".checkable-field").removeClass("checked");
+
+						$this.closest(".checkable-field").addClass("checked");
+					}
+				}
+
+			});
+
+			// "check" any already checked items
+			$("input[type=radio]:checked, input[type=checkbox]:checked", context).closest(".checkable-field").addClass("checked");
+
+		};
+
+
+		self.init();
+	};
+
+	$.fn.checkable = function(radius, options){
+		return this.each(function(){
+			(new $.checkable(this, options));
+		});
+	};
+
+}(jQuery, window));

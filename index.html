@@ -2,89 +2,18 @@
 <html xml:lang="en-au" lang="en-au">
 <head>
 	<meta charset="utf-8">
-	<title>Afterlight Checkable Demo</title>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="index,follow">
-	<meta name="rating" content="General">
+	<title>Afterlight jQuery.Checkable Demo</title>
 
-	<meta name="language" content="en-au">
-
-	<style type="text/css">
-		#content {
-			padding:50px;
-		}
-
-		.checkable-field {
-			background: #ccc;
-			position: relative;
-			width:20px;
-			height:20px;
-			display: inline-block;
-			overflow: hidden;
-		}
-		.checkable-field input {
-			position: absolute;
-			left:-100%;
-		}
-
-		.checkable-field.checkable-radio {
-			-webkit-border-radius: 10px;
-			-moz-border-radius: 10px;
-			-ms-border-radius: 10px;
-			-o-border-radius: 10px;
-			border-radius: 10px;
-		}
-
-		.checked {
-			background: #0c0;
-		}
-
-	</style>
-
+	<link rel="stylesheet" href="demo.css" type="text/css" />
+	<link rel="stylesheet" href="jquery.checkable.css" type="text/css" />
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.checkable.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
 			"use strict";
-
-			function customCheckfields( selector ) {
-
-				var context = selector !== undefined ? $(selector).parent() : $("body");
-
-				// wrap the checkboxes with labels, this way the browser will take care of all those pesky things like
-				// checking the fields
-				$("input[type=radio]", context ).wrap("<label class='checkable-field checkable-radio'/>");
-				$("input[type=checkbox]", context ).wrap("<label class='checkable-field checkable-checkbox'/>");
-
-				$(context).on("change", "input[type=radio], input[type=checkbox]", function() {
-					var $this = $(this),
-						isRadio = $this.is("[type=radio]"),
-						isChecked = $this.is(":checked");
-
-					//checkboxes can simply toggle
-					if (!isRadio) {
-						$this
-							.closest(".checkable-field")
-							.toggleClass("checked", isChecked);
-					}
-					else {
-						if (isChecked) {
-							//remove the checked class from all the radios in the group
-							$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".checkable-field").removeClass("checked");
-
-							$this.closest(".checkable-field").addClass("checked");
-						}
-					}
-
-				});
-
-			}
-
-			customCheckfields("body");
+			$("#content").checkable();
 		});
-
 	</script>
 </head>
 <body>
@@ -92,19 +21,56 @@
 
 	<div id="content">
 
-		<div class="field">
-			<label for="cbx-1"><input type="checkbox" id="cbx-1" name="cbx-1" /> This is Checkbox 1</label>
-		</div>
-		<div class="field">
-			<input type="checkbox" id="cbx-2" name="cbx-2" /> <label for="cbx-2">This is Checkbox 2</label>
-		</div>
+		<fieldset>
+			<legend>Some Checkboxes</legend>
+			<p>I like:</p>
+			<div class="field">
+				<label for="cbx-1"><input type="checkbox" id="cbx-1" name="cbx-1" /> Apples</label>
+			</div>
+			<div class="field">
+				<input type="checkbox" id="cbx-2" name="cbx-2" /> <label for="cbx-2">Oranges</label>
+			</div>
+			<div class="field">
+				<input type="checkbox" id="cbx-3" name="cbx-3" /> <label for="cbx-3">Pears</label>
+			</div>
+			<div class="field">
+				<input type="checkbox" id="cbx-4" name="cbx-4" /> <label for="cbx-4">Peaches</label>
+			</div>
+		</fieldset>
 
-		<div class="field">
-			<label for="rdo-1"><input type="radio" id="rdo-1" name="rdo-group" /> This is radio 1</label>
-		</div>
-		<div class="field">
-			<input type="radio" id="rdo-2" name="rdo-group" /> <label for="rdo-2">This is radio 2</label>
-		</div>
+		<fieldset>
+			<legend>Some Radio Buttons</legend>
+			<p>The best fruit is:</p>
+			<div class="field">
+				<label for="rdo-fruit-1"><input type="radio" id="rdo-fruit-1" name="rdo-fruit" /> Bananas</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-fruit-2" name="rdo-fruit" /> <label for="rdo-fruit-2">Peaches</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-fruit-3" name="rdo-fruit" /> <label for="rdo-fruit-3">Mangos</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-fruit-4" name="rdo-fruit" /> <label for="rdo-fruit-4">Mandarins</label>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Some (More) Radio Buttons</legend>
+			<p>The best car is:</p>
+			<div class="field">
+				<label for="rdo-cars-1"><input type="radio" id="rdo-cars-1" name="rdo-cars" /> Ford Mustang</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-cars-2" name="rdo-cars" /> <label for="rdo-cars-2">Ferrari F50</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-cars-3" name="rdo-cars" /> <label for="rdo-cars-3">Jeep Wrangler</label>
+			</div>
+			<div class="field">
+				<input type="radio" id="rdo-cars-4" name="rdo-cars" checked /> <label for="rdo-cars-4">Bugatti Veyron</label>
+			</div>
+		</fieldset>
 
 	</div>
 
