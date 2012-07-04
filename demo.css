@@ -1,3 +1,4 @@
+/** Styles for the demo page only */
 
 body {
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
@@ -32,7 +33,5 @@ fieldset {
 legend {
 	font-size: 24px;
 	font-weight: bold;
-	position: relative;
-	top:-5px;
 	padding:0 10px;
 }

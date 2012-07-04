@@ -61,6 +61,13 @@
 
 			});
 
+			// Add a focus class.
+			$(context).on("focusin focusout", "input[type=checkbox], input[type=radio]", function(e) {
+
+				$(this).closest(".checkable-field").toggleClass("focused", e.type === "focusin");
+
+			});
+
 			// "check" any already checked items
 			$("input[type=radio]:checked, input[type=checkbox]:checked", context).closest(".checkable-field").addClass("checked");
 

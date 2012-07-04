@@ -1,3 +1,18 @@
+/*
+ * Sample styles for jQuery.checkable
+ *
+ * Author: John Van Der Loo
+ * Twitter: @geekyjohn
+ * Website: http://www.afterlight.com.au
+ *
+ */
+
+
+/** Base styles */
+.checkable-field input {
+	position: absolute;
+	left:-100%;
+}
 
 .checkable-field {
 	background: #ccc;
@@ -8,19 +23,18 @@
 	display: inline-block;
 	overflow: hidden;
 }
-.checkable-field input {
-	position: absolute;
-	left:-100%;
+
+.checkable-field:hover,
+.checkable-field.focused {
+	background: #aaa;
 }
 
-.checkable-field.checkable-radio {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
-	border-radius: 10px;
-}
 
 .checked {
 	background: #0c0;
 }
+.checked.focused {
+	background: #090;
+}
+
+
