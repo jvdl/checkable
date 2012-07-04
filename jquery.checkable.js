@@ -48,6 +48,8 @@
 					$this
 						.closest(".checkable-field")
 						.toggleClass("checked", isChecked);
+
+					$this.trigger("focusout"); //focusout after toggling a checkbox
 				}
 				//and radio buttons can only have 1 checked per group
 				else {
@@ -58,6 +60,7 @@
 						$this.closest(".checkable-field").addClass("checked");
 					}
 				}
+
 
 			});
 

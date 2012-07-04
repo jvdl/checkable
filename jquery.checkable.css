@@ -33,8 +33,9 @@
 .checked {
 	background: #0c0;
 }
+
+.checked:hover,
 .checked.focused {
 	background: #090;
 }
-
 

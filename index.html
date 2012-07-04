@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>Afterlight jQuery.Checkable Demo</title>
 
-	<link rel="stylesheet" href="demo.css" type="text/css" />
 	<link rel="stylesheet" href="jquery.checkable.css" type="text/css" />
+	<link rel="stylesheet" href="demo.css" type="text/css" />
 
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js"></script>
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -20,6 +20,8 @@
 </head>
 <body>
 
+<div id="content">
+	<h1>jQuery.checkable by <a href="http://afterlight.com.au">Afterlight</a></h1>
 
 	<section>
 		<h1>Base style</h1>
@@ -37,23 +39,6 @@
 			</div>
 			<div class="field">
 				<input type="checkbox" id="cbx-4" name="cbx-4" /> <label for="cbx-4">Peaches</label>
-			</div>
-		</fieldset>
-
-		<fieldset>
-			<legend>More fruit</legend>
-			<p>The best fruit is:</p>
-			<div class="field">
-				<label for="rdo-fruit-1"><input type="radio" id="rdo-fruit-1" name="rdo-fruit" /> Bananas</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-fruit-2" name="rdo-fruit" /> <label for="rdo-fruit-2">Peaches</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-fruit-3" name="rdo-fruit" /> <label for="rdo-fruit-3">Mangos</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-fruit-4" name="rdo-fruit" /> <label for="rdo-fruit-4">Mandarins</label>
 			</div>
 		</fieldset>
 
@@ -98,23 +83,6 @@
 		</fieldset>
 
 		<fieldset>
-			<legend>More fruit</legend>
-			<p>The best fruit is:</p>
-			<div class="field">
-				<label for="rdo-smooth-fruit-1"><input type="radio" id="rdo-smooth-fruit-1" name="rdo-smooth-fruit" /> Bananas</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-smooth-fruit-2" name="rdo-smooth-fruit" /> <label for="rdo-smooth-fruit-2">Peaches</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-smooth-fruit-3" name="rdo-smooth-fruit" /> <label for="rdo-smooth-fruit-3">Mangos</label>
-			</div>
-			<div class="field">
-				<input type="radio" id="rdo-smooth-fruit-4" name="rdo-smooth-fruit" /> <label for="rdo-smooth-fruit-4">Mandarins</label>
-			</div>
-		</fieldset>
-
-		<fieldset>
 			<legend>Cars</legend>
 			<p>The best car is:</p>
 			<div class="field">
@@ -148,7 +116,7 @@
 				<input type="checkbox" id="cbx-onoff-2" name="cbx-onoff-2" /> <label for="cbx-onoff-2"> I am over 18</label>
 			</div>
 			<div class="field">
-				<input type="checkbox" id="cbx-onoff-3" name="cbx-onoff-3" /> <label for="cbx-onoff-3"> I've read the terms and conditions</label>
+				<input type="checkbox" id="cbx-onoff-3" name="cbx-onoff-3" /> <label for="cbx-onoff-3"> I've read the terms</label>
 			</div>
 			<div class="field">
 				<input type="checkbox" id="cbx-onoff-4" name="cbx-onoff-4" /> <label for="cbx-onoff-4">Music</label>
@@ -159,23 +127,23 @@
 			<legend>Vegetable</legend>
 			<p>I like:</p>
 			<div class="field">
-				<label for="cbx-veg-1"><input type="checkbox" id="cbx-veg-1" name="cbx-veg-1" /> Leek</label>
+				<label for="cbx-veg-1"><input type="radio" id="cbx-veg-1" name="rdo-veg" /> Leek</label>
 			</div>
 			<div class="field">
-				<input type="checkbox" id="cbx-veg-2" name="cbx-veg-2" /> <label for="cbx-veg-2">Lettuce</label>
+				<input type="radio" id="cbx-veg-2" name="rdo-veg" /> <label for="cbx-veg-2">Lettuce</label>
 			</div>
 			<div class="field">
-				<input type="checkbox" id="cbx-veg-3" name="cbx-veg-3" /> <label for="cbx-veg-3">Carrots</label>
+				<input type="radio" id="cbx-veg-3" name="rdo-veg" /> <label for="cbx-veg-3">Carrots</label>
 			</div>
 			<div class="field">
-				<input type="checkbox" id="cbx-veg-4" name="cbx-veg-4" /> <label for="cbx-veg-4">Cabbage</label>
+				<input type="radio" id="cbx-veg-4" name="rdo-veg" /> <label for="cbx-veg-4">Cabbage</label>
 			</div>
 		</fieldset>
 
 
 	</section>
 
-
+</div>
 
 
 </body>

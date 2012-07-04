@@ -4,14 +4,78 @@ body {
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 	font-size: 16px;
 	line-height: 1.3;
+	background: url(img/purty_wood.png) 0 0 repeat #eee;;
 }
 
+#content {
+	width:1120px;
+	margin:0 auto;
+	min-width: 300px;
+}
+
+
+
+
 section {
+	background: url(img/furley_bg.png) 0 0 repeat #eee;;
 	display: block;
-	width:28%;
+	width:300px;
 	min-width: 260px;
-	margin:20px;
+	margin:0 10px 10px;
+	padding:20px;
 	float: left;
+
+	border:10px solid #ccc;
+	border-color:rgba(0,0,0,.7);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen  and (min-width : 320px) {
+
+	#content {
+		width:100%;
+	}
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px)  and (max-device-width : 1024px) {
+
+	section {
+		width:85%;
+		margin:20px 10px;
+	}
+
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+	#content {
+		width:1150px;
+	}
+
+	section {
+		margin:0 10px 10px;
+	}
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+	#content {
+		width:1620px;
+	}
+
+	section {
+		width:400px;
+		margin:0 20px;
+	}
 }
 
 .field {
@@ -28,6 +92,11 @@ fieldset {
 	border:2px groove #ddd;
 	margin:20px 0;
 	padding:0 20px 20px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
 }
 
 legend {
@@ -35,3 +104,95 @@ legend {
 	font-weight: bold;
 	padding:0 10px;
 }
+
+
+/** Theme examples */
+
+
+/* Smooth UI */
+
+/* checkbox is default */
+.smooth .checkable-field {
+	background: url(img/demo.png) 0 -63px no-repeat transparent;
+	position: relative;
+	width:19px;
+	height:20px;
+	display: inline;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.smooth .checkable-field:hover {
+	background-position:-19px -63px;
+}
+
+.smooth .checkable-field.focused {
+	background-position:-38px -63px;
+}
+
+.smooth .checked {
+	background-position:-57px -63px;
+}
+
+.smooth .checked:hover {
+	background-position:-76px -63px;
+}
+
+.smooth .checked.focused {
+	background-position:-95px -63px;
+}
+
+
+
+.smooth .checkable-radio {
+	background-position: 0 -44px;
+}
+
+.smooth .checkable-radio:hover {
+	background-position:-19px -44px;
+}
+
+.smooth .checkable-radio.focused {
+	background-position:-38px -44px;
+}
+
+.smooth .checkable-radio.checked {
+	background-position:-57px -44px;
+}
+
+.smooth .checkable-radio.checked:hover {
+	background-position:-76px -44px;
+}
+
+.smooth .checkable-radio.checked.focused {
+	background-position:-95px -44px;
+}
+
+
+/** Derailed UI */
+.derailed {
+	color:#fff;
+	background: url(http://subtlepatterns.com/patterns/dirty_old_shirt.png) 0 0 repeat #333; /* Thank you, subtlepatterns.com :) */
+	border-color:rgba(255,255,255,.4);
+}
+
+/* checkbox is default */
+.derailed .checkable-field {
+	background: url(img/demo.png) 0 0 no-repeat transparent;
+	width:65px;
+	height:44px;
+}
+
+.derailed .checkable-field.focused {
+	background-color:transparent;
+	background-position:-65px 0;
+}
+
+.derailed .checked {
+	background-position:-130px 0;
+}
+
+.derailed .checked.focused {
+	background-position:-195px 0;
+}
+
