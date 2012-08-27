@@ -105,6 +105,13 @@ legend {
 	padding:0 10px;
 }
 
+.default .checkable-field.checkable-radio {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
 
 /** Theme examples */
 
@@ -195,4 +202,3 @@ legend {
 .derailed .checked.focused {
 	background-position:-195px 0;
 }
-
