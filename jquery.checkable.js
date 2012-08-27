@@ -19,13 +19,16 @@
 		self.$el = $(el);
 		self.el = el;
 
+		self.defaultOptions = {
+			retainFocus: true // retain focus on checkboxes after checking with keyboard?
+		};
+
 		self.init = function(){
 
-			self.options = $.extend({}, $.checkable.defaultOptions, options);
-
-			// Put your initialization code here
+			self.options = $.extend({}, self.defaultOptions, options);
 
 			self.setupFields();
+
 		};
 
 
@@ -43,18 +46,21 @@
 					isRadio = $this.is("[type=radio]"),
 					isChecked = $this.is(":checked");
 
-				//checkboxes can simply toggle
+				// checkboxes can simply toggle
 				if (!isRadio) {
 					$this
 						.closest(".checkable-field")
 						.toggleClass("checked", isChecked);
 
-					$this.trigger("focusout"); //focusout after toggling a checkbox
+					// do we need to retain focus of the checkbox after checking with keyboard
+					if ( ! self.options.retainFocus ) {
+						$this.trigger("focusout"); //focusout after toggling a checkbox
+					}
 				}
-				//and radio buttons can only have 1 checked per group
+				// and radio buttons can only have 1 checked per group
 				else {
 					if (isChecked) {
-						//remove the checked class from all the radios in the group
+						// remove the checked class from all the radios in the group
 						$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".checkable-field").removeClass("checked");
 
 						$this.closest(".checkable-field").addClass("checked");
@@ -64,7 +70,7 @@
 
 			});
 
-			// Add a focus class.
+			// Add a focus class for keyboard navigation.
 			$(context).on("focusin focusout", "input[type=checkbox], input[type=radio]", function(e) {
 
 				$(this).closest(".checkable-field").toggleClass("focused", e.type === "focusin");
@@ -80,7 +86,7 @@
 		self.init();
 	};
 
-	$.fn.checkable = function(radius, options){
+	$.fn.checkable = function(options){
 		return this.each(function(){
 			(new $.checkable(this, options));
 		});
