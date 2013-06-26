@@ -61,7 +61,7 @@
 				else {
 					if (isChecked) {
 						// remove the checked class from all the radios in the group
-						$("input[name=" + $this.attr("name") + "]:not(:checked)", context).closest(".checkable-field").removeClass("checked");
+						$("input[name='" + $this.attr("name") + "']:not(:checked)", context).closest(".checkable-field").removeClass("checked");
 
 						$this.closest(".checkable-field").addClass("checked");
 					}
