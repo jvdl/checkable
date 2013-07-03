@@ -218,6 +218,10 @@ legend {
 	color:#ddd;
 }
 
+.derailed label {
+	line-height:2.5;
+}
+
 /* checkbox is default */
 .derailed label .checkable-field,
 .derailed .checkable-field {
