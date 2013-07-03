@@ -21,21 +21,25 @@
 	height:20px;
 	display: inline;
 	display: inline-block;
+	float:left;
 	overflow: hidden;
+	top:3px;
+	margin-right:5px;
 }
 
+label:hover .checkable-field,
 .checkable-field:hover,
 .checkable-field.focused {
 	background: #aaa;
 }
 
-
+label .checked,
 .checked {
-	background: #0c0;
+	background: #58e;
 }
 
+label:hover .checked,
 .checked:hover,
 .checked.focused {
-	background: #090;
+	background: #36c;
 }
-

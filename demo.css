@@ -3,8 +3,16 @@
 body {
 	font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
 	font-size: 16px;
+	color:#222;
 	line-height: 1.3;
-	background: url(img/purty_wood.png) 0 0 repeat #eee;;
+	background: url(img/use_your_illusion.png) 0 0 repeat #eee;;
+}
+
+h1 {
+	color:#ccc;
+}
+a {
+	color:#69f;
 }
 
 #content {
@@ -32,8 +40,12 @@ section {
 	-ms-border-radius: 20px;
 	-o-border-radius: 20px;
 	border-radius: 20px;
+	box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.1);
 }
 
+section h1 {
+	color:#000;
+}
 
 /* Smartphones (portrait) ----------- */
 @media only screen  and (min-width : 320px) {
@@ -80,6 +92,7 @@ section {
 
 .field {
 	margin:0 0 5px 20px;
+	clear:both;
 }
 
 .field label {
@@ -105,6 +118,17 @@ legend {
 	padding:0 10px;
 }
 
+.default .checkable-field {
+	border:1px solid #999;
+	box-shadow: inset 0 0 3px rgba(255,255,255,0.4);
+}
+
+.default .checkable-field:hover,
+.default label:hover .checkable-field,
+.default .checkable-field.checked {
+	box-shadow: inset 0 0 0 4px rgba(255,255,255,1);
+}
+
 .default .checkable-field.checkable-radio {
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -119,6 +143,7 @@ legend {
 /* Smooth UI */
 
 /* checkbox is default */
+.smooth label .checkable-field,
 .smooth .checkable-field {
 	background: url(img/demo.png) 0 -63px no-repeat transparent;
 	position: relative;
@@ -129,6 +154,7 @@ legend {
 	overflow: hidden;
 }
 
+.smooth label:hover .checkable-field,
 .smooth .checkable-field:hover {
 	background-position:-19px -63px;
 }
@@ -137,10 +163,12 @@ legend {
 	background-position:-38px -63px;
 }
 
+.smooth label .checked,
 .smooth .checked {
 	background-position:-57px -63px;
 }
 
+.smooth label:hover .checked,
 .smooth .checked:hover {
 	background-position:-76px -63px;
 }
@@ -150,11 +178,12 @@ legend {
 }
 
 
-
+.smooth label .checkable-radio,
 .smooth .checkable-radio {
 	background-position: 0 -44px;
 }
 
+.smooth label:hover .checkable-radio,
 .smooth .checkable-radio:hover {
 	background-position:-19px -44px;
 }
@@ -163,10 +192,12 @@ legend {
 	background-position:-38px -44px;
 }
 
+.smooth label .checkable-radio.checked,
 .smooth .checkable-radio.checked {
 	background-position:-57px -44px;
 }
 
+.smooth label:hover .checkable-radio.checked,
 .smooth .checkable-radio.checked:hover {
 	background-position:-76px -44px;
 }
@@ -178,12 +209,17 @@ legend {
 
 /** Derailed UI */
 .derailed {
-	color:#fff;
-	background: url(http://subtlepatterns.com/patterns/dirty_old_shirt.png) 0 0 repeat #333; /* Thank you, subtlepatterns.com :) */
+	color:#ccc;
+	background: url(img/dirty_old_shirt.png) 0 0 repeat #333; /* Thank you, subtlepatterns.com :) */
 	border-color:rgba(255,255,255,.4);
 }
 
+.derailed h1 {
+	color:#ddd;
+}
+
 /* checkbox is default */
+.derailed label .checkable-field,
 .derailed .checkable-field {
 	background: url(img/demo.png) 0 0 no-repeat transparent;
 	width:65px;
@@ -195,6 +231,7 @@ legend {
 	background-position:-65px 0;
 }
 
+.derailed label .checked,
 .derailed .checked {
 	background-position:-130px 0;
 }
