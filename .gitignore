@@ -1,0 +1,5 @@
+.komodotools
+.idea
+*.komodoproject
+tmp
+_psd
