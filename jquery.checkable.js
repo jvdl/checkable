@@ -106,7 +106,7 @@
 				if (isChecked) {
 					// remove the checked class from all the radios in the group
 					self.$el
-						.find("input[name=" + $this.attr("name") + "]")
+						.find("input[name='" + $this.attr("name") + "']")
 						.closest(".checkable-field")
 						.removeClass("checked");
 
