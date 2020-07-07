@@ -1,0 +1,3 @@
+[submodule "checkable"]
+	path = checkable
+	url = https://github.com/jvdl/checkable
